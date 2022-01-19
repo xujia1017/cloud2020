@@ -40,7 +40,7 @@ eureka:
 
 
 mybatis:
-  mapperLocations: classpath:mapper/*.xml
+  mapperLocations: classpath:mapper/*.xml     #扫描该目录下的所有mapper文件
   type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
 
 

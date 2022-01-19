@@ -5,13 +5,14 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 /**
+ *
  * @auther zzyy
  * @create 2020-02-18 10:27
  */
-@Mapper
-public interface PaymentDao
-{
-    public int create(Payment payment);
+@Mapper //推荐使用该注解，不推荐使用@reposity
+public interface PaymentDao {
 
-    public Payment getPaymentById(@Param("id") Long id);
+    int create(Payment payment);
+
+    Payment getPaymentById(@Param("id") Long id);
 }
