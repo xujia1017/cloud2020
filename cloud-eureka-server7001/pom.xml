@@ -12,7 +12,6 @@
     <artifactId>cloud-eureka-server7001</artifactId>
 
 
-
     <dependencies>
         <!--eureka-server-->
         <dependency>
