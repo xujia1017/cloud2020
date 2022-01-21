@@ -12,8 +12,6 @@
     <artifactId>cloud-consumerzk-order80</artifactId>
 
 
-
-
     <dependencies>
         <!-- SpringBoot整合Web组件 -->
         <dependency>
@@ -24,7 +22,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
-            <!--先排除自带的zookeeper-->
+            <!--先排除自带的zookeeper，避免jar包冲突-->
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.zookeeper</groupId>
