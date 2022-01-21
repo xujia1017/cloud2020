@@ -28,8 +28,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class OrderController {
 
+    //单机版注册中心
     //public static final String PAYMENT_URL = "http://localhost:8001";
 
+    //集群版注册中心-配置为微服务的名称
     public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @Resource
