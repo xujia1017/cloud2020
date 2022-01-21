@@ -18,7 +18,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency><!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
+        <!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
+        <dependency>
             <groupId>com.atguigu.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>${project.version}</version>
@@ -27,7 +28,7 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
-            <!--先排除自带的zookeeper3.5.3-->
+            <!--先排除自带的zookeeper3.5.3,解决jar包冲突-->
             <exclusions>
                 <exclusion>
                     <groupId>org.apache.zookeeper</groupId>
