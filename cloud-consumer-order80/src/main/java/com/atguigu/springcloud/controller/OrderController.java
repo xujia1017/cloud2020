@@ -1,10 +1,9 @@
 package com.atguigu.springcloud.controller;
 
-import com.atguigu.springcloud.entities.CommonResult;
-import com.atguigu.springcloud.entities.Payment;
-import com.atguigu.springcloud.lb.LoadBalancer;
+import java.net.URI;
+import java.util.List;
 
-import lombok.extern.slf4j.Slf4j;
+import javax.annotation.Resource;
 
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -15,10 +14,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.Resource;
+import com.atguigu.springcloud.entities.CommonResult;
+import com.atguigu.springcloud.entities.Payment;
+import com.atguigu.springcloud.lb.LoadBalancer;
 
-import java.net.URI;
-import java.util.List;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @auther zzyy
@@ -60,7 +60,7 @@ public class OrderController {
         if (entity.getStatusCode().is2xxSuccessful()) {
             return entity.getBody();
         } else {
-            return new CommonResult<>(444, "操作失败");
+            return new CommonResult<>(400, "操作失败");
         }
     }
 
