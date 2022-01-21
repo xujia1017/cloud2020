@@ -8,7 +8,8 @@ import java.util.List;
  * @auther zzyy
  * @create 2020-02-19 20:31
  */
-public interface LoadBalancer
-{
+public interface LoadBalancer {
+
     ServiceInstance instances(List<ServiceInstance> serviceInstances);
+
 }
