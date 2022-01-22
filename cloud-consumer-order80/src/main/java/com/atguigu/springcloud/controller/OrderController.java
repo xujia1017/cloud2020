@@ -34,6 +34,9 @@ public class OrderController {
     //集群版注册中心-配置为微服务的名称
     public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
+    /**
+     * RestTemplate是从Spring3.0开始支持的一个HTTP请求工具，它提供了常见的REST服务请求方案的模版
+     */
     @Resource
     private RestTemplate restTemplate;
 
