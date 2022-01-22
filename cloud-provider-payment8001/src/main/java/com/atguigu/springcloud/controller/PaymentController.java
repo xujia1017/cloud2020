@@ -85,6 +85,9 @@ public class PaymentController {
         return serverPort;
     }
 
+    /**
+     * 测试OpenFeign的超时控制
+     */
     @GetMapping(value = "/payment/feign/timeout")
     public String paymentFeignTimeout() {
         // 业务逻辑处理正确，但是需要耗费3秒钟

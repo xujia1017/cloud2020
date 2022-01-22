@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
+ * 手动实现负载均衡算法
  * @auther zzyy
  * @create 2020-02-19 20:33
  */
