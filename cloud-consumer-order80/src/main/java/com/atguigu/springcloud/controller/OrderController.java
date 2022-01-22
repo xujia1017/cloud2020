@@ -70,21 +70,23 @@ public class OrderController {
     }
 
     @GetMapping(value = "/consumer/payment/lb")
-    public String getPaymentLB() {
+    public String getPaymentLb() {
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
 
         if (instances == null || instances.size() <= 0) {
             return null;
         }
-
+        //根据自定义的负载均衡算法得到路由的服务
         ServiceInstance serviceInstance = loadBalancer.instances(instances);
         URI uri = serviceInstance.getUri();
-
+        //根据得到的服务地址去远程请求payment服务
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
 
     }
 
-    // ====================> zipkin+sleuth
+    /**
+     * ====================> zipkin+sleuth
+     */
     @GetMapping("/consumer/payment/zipkin")
     public String paymentZipkin() {
         String result = restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin/", String.class);
