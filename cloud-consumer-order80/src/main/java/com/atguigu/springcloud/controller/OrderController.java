@@ -85,7 +85,7 @@ public class OrderController {
     }
 
     /**
-     * ====================> zipkin+sleuth
+     * 服务监控追踪:zipkin+sleuth
      */
     @GetMapping("/consumer/payment/zipkin")
     public String paymentZipkin() {
