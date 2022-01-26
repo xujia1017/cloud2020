@@ -12,10 +12,8 @@
     <artifactId>cloudalibaba-consumer-nacos-order83</artifactId>
 
 
-
-
     <dependencies>
-        <!--SpringCloud ailibaba nacos -->
+        <!--SpringCloud ailibaba nacos：支持负载均衡（集成了ribbon） -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
@@ -31,6 +29,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <!-- Actuator可以在生产环境监控当前应用的健康，虚拟机等信息，通过前端以可视化的界面展示出来 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
