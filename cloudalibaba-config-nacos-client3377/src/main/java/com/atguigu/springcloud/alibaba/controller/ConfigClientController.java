@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
  * @create 2020-02-23 17:02
  */
 @RestController
-@RefreshScope //支持Nacos的动态刷新功能。
-public class ConfigClientController
-{
+@RefreshScope       //支持Nacos的动态刷新功能。
+public class ConfigClientController {
+
     @Value("${config.info}")
     private String configInfo;
 
@@ -20,4 +20,5 @@ public class ConfigClientController
     public String getConfigInfo() {
         return configInfo;
     }
+
 }
