@@ -17,7 +17,7 @@ spring:
 
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
-# 去哪个命名空间下的哪个组下的哪个yaml配置文件下去读配置信息
+# 去`哪个命名空间`下的`哪个分组`下的`哪个yaml配置文件`下去读配置信息
 
 # nacos-config-client-dev.yaml
 
