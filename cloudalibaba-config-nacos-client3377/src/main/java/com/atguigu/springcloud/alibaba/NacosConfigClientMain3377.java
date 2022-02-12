@@ -10,6 +10,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  *      Nacos = Eureka + Config + Bus
  *      替代Eureka做服务注册中心，替代Config做服务配置中心
  *
+ * Nacos天生自带负载均衡
+ *
  * @auther zzyy
  * @create 2020-02-23 17:01
  */
