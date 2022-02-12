@@ -12,11 +12,14 @@ spring:
       config:
         server-addr: localhost:8848   #Nacos作为配置中心地址
         file-extension: yaml          #指定yaml格式的配置，即当前的3377服务就可以去8848上读取后缀格式为yaml文件
-#        group: DEV_GROUP
-#        namespace: 7d8f0f5a-6a53-4785-9686-dd460158e5d4
+#        group: DEV_GROUP             #哪个分组
+#        namespace: 7d8f0f5a-6a53-4785-9686-dd460158e5d4    #哪个命名空间
 
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+# 去哪个命名空间下的哪个组下的哪个yaml配置文件下去读配置信息
+
 # nacos-config-client-dev.yaml
 
 # nacos-config-client-test.yaml   ----> config.info
+
