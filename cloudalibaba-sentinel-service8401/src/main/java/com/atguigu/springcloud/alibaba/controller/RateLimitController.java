@@ -16,6 +16,9 @@ import com.atguigu.springcloud.entities.Payment;
 @RestController
 public class RateLimitController {
 
+    /**
+     * 按照资源名称进行流控测试
+     */
     @GetMapping("/byResource")
     @SentinelResource(value = "byResource", blockHandler = "handleException")
     public CommonResult byResource() {
@@ -26,6 +29,9 @@ public class RateLimitController {
         return new CommonResult(444, exception.getClass().getCanonicalName() + "\t 服务不可用");
     }
 
+    /**
+     * 按照URL进行流控测试
+     */
     @GetMapping("/rateLimit/byUrl")
     @SentinelResource(value = "byUrl")
     public CommonResult byUrl() {
