@@ -51,7 +51,7 @@ public class FlowLimitController {
     }
 
     /**
-     * 如果此处违背了我们在sential中配置的规则，就由`blockHandler`中指定的方法进行兜底处理，即fallback回调作用
+     * 如果此处违背了我们在sential中配置的规则，就由`blockHandler`中指定的方法进行兜底处理
      *
      * @param p1
      * @param p2
