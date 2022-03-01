@@ -34,7 +34,7 @@
 
 7 分布式消息
     Rabbit MQ
-    Rocket MQ（
+    Rocket MQ
     kafka
 
 
