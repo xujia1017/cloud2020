@@ -6,15 +6,17 @@
     Redis
 
 
-2 RPC通信组件
-    Feign
-    OpenFeign
-    Dubbo
-    Grpc
+2 负载均衡
+      RestTemplate: Spring提供的一个访问 Http 服务的客户端类
+      Ribbon: 是运行在消费者端的负载均衡器
 
 
-3 负载均衡
-    Ribbon是运行在消费者端的负载均衡器
+
+3 RPC通信组件
+      Feign
+      OpenFeign: 也是运行在消费者端的，使用 Ribbon 进行负载均衡，所以 OpenFeign 直接内置了 Ribbon
+      Dubbo
+      Grpc
 
 
 4 配置中心
@@ -23,7 +25,11 @@
 
 
 5 服务降级/熔断
-    Hystrix
+    Hystrix:
+        1 就是一个能进行`熔断` 和`降级`的库，通过使用它能提高整个系统的弹性
+        2 在分布式环境中，不可避免地会有许多服务依赖项中的某些失败。Hystrix 是一个库，可通过添加等待时间容限和容错逻辑来帮助您控制这些分布式服务之间的交互。
+          Hystrix 通过隔离服务之间的访问点，停止服务之间的级联故障并提供后备选项来实现此目的，所有这些都可以提高系统的整体弹性。
+
     Sentinel
 
 
