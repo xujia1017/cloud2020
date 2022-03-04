@@ -33,3 +33,8 @@ mybatis:
   type-aliases-package: com.atguigu.springcloud.entities    # 所有Entity别名类所在包
 
 
+#创建MySQL的用户   CREATE USER 'cloud2020'@'%' IDENTIFIED BY 'cloud2020';
+#授予新用户的权限   GRANT ALL ON *.* TO 'cloud2020'@'%';
+#撤销新用户的权限   REVOKE privilege ON databasename.tablename FROM 'username'@'host';
+#设置MySQL的密码   SET PASSWORD FOR 'username'@'host' = PASSWORD('newpassword');
+#MySQLa建库       CREATE DATABASE IF NOT EXISTS cloud2020 DEFAULT CHARACTER SET utf8;
