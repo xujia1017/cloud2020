@@ -80,7 +80,7 @@
 
         2 Spring Cloud Bus的作用就是管理和广播分布式系统中的消息，也就是消息引擎系统中的广播模式。当然作为 消息总线 的Spring Cloud Bus可以做很多事而不仅仅是客户端的配置刷新功能。
 
-        3 
+        3 拥有了 Spring Cloud Bus 之后，我们只需要创建一个简单的请求，并且加上 @ResfreshScope 注解就能进行配置的动态修改了
 
 
 
