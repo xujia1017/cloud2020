@@ -29,13 +29,18 @@ import lombok.extern.slf4j.Slf4j;
 public class OrderController {
 
     //单机版注册中心
-    //public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://localhost:8001";
 
     //集群版注册中心-配置为微服务的名称
-    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
+    //public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
+
+
 
     /**
-     * RestTemplate是从Spring3.0开始支持的一个HTTP请求工具，它提供了常见的REST服务请求方案的模版
+     * RestTemplate 就是 Spring 封装的处理同步 HTTP 请求的类。它提供了常见用于访问Rest服务的 客户端模板工具集。
+     *
+     *  使用restTemplate访问restful接口非常的简单粗暴无脑。
+     *  (url, requestMap, ResponseBean.class)这三个参数分别代表: REST请求地址、请求参数、HTTP响应转换被转换成的对象类型。
      */
     @Resource
     private RestTemplate restTemplate;
