@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * 自定义路由
+ *
  * @auther zzyy
  * @create 2020-02-21 11:42
  */

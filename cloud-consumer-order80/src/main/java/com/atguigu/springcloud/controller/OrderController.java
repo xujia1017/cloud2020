@@ -86,8 +86,13 @@ public class OrderController {
         }
     }
 
+    /**
+     * 根据自定义负载均衡算法，路由到服务注册中得到的服务地址
+     * @return
+     */
     @GetMapping(value = "/consumer/payment/lb")
     public String getPaymentLb() {
+        //从服务注册中心获取服务实例
         List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
 
         if (instances == null || instances.size() <= 0) {
@@ -96,6 +101,7 @@ public class OrderController {
         //根据自定义的负载均衡算法得到路由的服务
         ServiceInstance serviceInstance = loadBalancer.instances(instances);
         URI uri = serviceInstance.getUri();
+
         //根据得到的服务地址去远程请求payment服务
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
 

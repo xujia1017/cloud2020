@@ -11,6 +11,8 @@ import com.atguigu.myrule.MySelfRule;
  * 微服务消费者——订单Module模块
  * Eureka Client端，将注册进Eureka Sever端，成为服务消费者provider
  *
+ * 在启动该微服务的时候就能去加载我们的自定义 Ribbon 配置类，从而使配置生效。
+ *
  * @auther zzyy
  * @create 2020-02-18 17:20
  */

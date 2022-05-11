@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * 当该服务-PaymentHystrixService调用出错，调用PaymentFallbackService降级服务进行处理
+ *
+ * @FeignClient注解实现了远程服务调用
+ *
  * @auther zzyy
  * @create 2020-02-20 11:55
  */

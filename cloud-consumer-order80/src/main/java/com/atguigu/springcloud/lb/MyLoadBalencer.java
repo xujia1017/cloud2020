@@ -1,10 +1,10 @@
 package com.atguigu.springcloud.lb;
 
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.stereotype.Component;
 
 /**
  * 手动实现负载均衡算法
@@ -17,7 +17,7 @@ public class MyLoadBalencer implements LoadBalancer {
     /**
      * 原子类，保证并发安全
      */
-    private AtomicInteger atomicInteger = new AtomicInteger(0);
+    private final AtomicInteger atomicInteger = new AtomicInteger(0);
 
     public final int getAndIncrement() {
         int current;

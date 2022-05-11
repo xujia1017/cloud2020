@@ -1,7 +1,5 @@
 package com.atguigu.springcloud;
 
-import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -9,14 +7,18 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
+import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
+
 /**
+ * 带有服务降级/熔断功能的Hytrix服务提供者(provider)
+ *
  * 新增一个类型的注解，主启动类上必须有激活的方法
  *
  * @auther zzyy
  * @create 2020-02-20 11:10
  */
-@SpringBootApplication  //Spring Boot的主配置类，Spring Boot会运行这个类的main方法来启动Spring Boot应用
-@EnableEurekaClient     //服务注册
+@SpringBootApplication  //SpringBoot的主配置类，SpringBoot会运行这个类的main方法来启动SpringBoot应用
+@EnableEurekaClient     //本服务启动后会自动注册进Eureka服务中
 @EnableCircuitBreaker   //启用服务降级熔断
 public class PaymentHystrixMain8001 {
 

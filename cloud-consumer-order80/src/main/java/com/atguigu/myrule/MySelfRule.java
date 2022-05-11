@@ -1,12 +1,14 @@
 package com.atguigu.myrule;
 
-import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.netflix.loadbalancer.IRule;
+import com.netflix.loadbalancer.RandomRule;
+
 /**
+ * 自定义Ribbon负载均衡算法
+ *
  * @auther zzyy
  * @create 2020-02-19 19:00
  */
