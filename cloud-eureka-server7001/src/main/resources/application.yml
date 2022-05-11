@@ -11,11 +11,15 @@ eureka:
     fetch-registry: false           #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
     service-url:
       #单机就是7001自己
-      defaultZone: http://eureka7001.com:7001/eureka/
+      #defaultZone: http://eureka7001.com:7001/eureka/
       #集群指向其它eureka(设置与Eureka Server交互的地址查询服务和注册服务都需要依赖这个地址。)
-      #defaultZone: http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7002.com:7002/eureka/
 
-  #server:
+  server:
     #关闭自我保护机制，保证不可用服务被及时踢除
-    #enable-self-preservation: false
-    #eviction-interval-timer-in-ms: 2000
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
+    #Eureka 客户端向服务端发送心跳的时间间隔，单位为秒 ( 默认是 30 秒 )
+    lease-renewal-interval-in-seconds: 1
+    #Eureka 服务端在收到最后一次心跳后等待时间上限，单位为秒 ( 默认是 90 秒 ) ，超时将剔除服务
+    lease-expiration-duration-in-seconds: 2

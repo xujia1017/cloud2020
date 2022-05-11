@@ -58,7 +58,10 @@
         <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
     </properties>
 
-    <!-- 子模块继承之后，提供作用：锁定版本+子modlue不用写groupId和version  -->
+    <!-- 子模块继承之后，提供作用: 锁定版本 + 子modlue不用写groupId和version
+         如果有多个子项目都引用同一样依赖，则可以避免在每个使用的子项目里都声明一个版本号。
+         只是声明依赖， 并不实现引入。如果不在子项目中声明依赖，是不会从父项目中继承下来的；
+         只有在子项目中写了该依赖项，并且没有指定具体版本，才会从父项目中继承该项，并且version和scope都读取自父pom -->
     <dependencyManagement>
         <dependencies>
             <!--spring boot 2.2.2-->

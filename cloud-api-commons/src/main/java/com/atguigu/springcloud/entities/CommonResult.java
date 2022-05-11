@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
+ * 响应结果通用类封装
+ *
  * @auther zzyy
  * @create 2020-02-18 17:23
  */

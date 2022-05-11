@@ -83,7 +83,7 @@ public class PaymentController {
     }
 
     /**
-     * 服务发现
+     * 对于注册到服务注册中心的微服务，可以通过服务发现来获取服务的信息
      */
     @GetMapping(value = "/payment/discovery")
     public Object discovery() {

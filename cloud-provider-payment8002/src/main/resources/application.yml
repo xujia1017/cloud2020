@@ -21,7 +21,7 @@ eureka:
     service-url:
       #单机版
       #defaultZone: http://localhost:7001/eureka
-      #集群版
+      #集群版（将当前支付服务发布到下面2台Eureka集群配置中）
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
   instance:
       instance-id: payment8002
