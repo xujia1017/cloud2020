@@ -17,7 +17,7 @@ import com.atguigu.springcloud.service.IMessageProvider;
  * @auther zzyy
  * @create 2020-02-22 10:56
  */
-@EnableBinding(Source.class)
+@EnableBinding(Source.class)    //可以理解为是一个消息的发送管道的定义
 public class MessageProviderImpl implements IMessageProvider {
 
     /**

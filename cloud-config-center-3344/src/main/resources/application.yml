@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name:  cloud-config-center #注册进Eureka服务器的微服务名
+    name: cloud-config-center #注册进Eureka服务器的微服务名
 
   cloud:
     config:
@@ -24,17 +24,17 @@ eureka:
 
 
 ##rabbitmq相关配置
-#rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: guest
-#    password: guest
-#
-#
-###rabbitmq相关配置,暴露bus刷新配置的端点
-#management:
-#  endpoints: #暴露bus刷新配置的端点
-#    web:
-#      exposure:
-#        include: 'bus-refresh'
+rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+##rabbitmq相关配置,暴露bus刷新配置的端点
+management:
+  endpoints: #暴露bus刷新配置的端点
+    web:
+      exposure:
+        include: 'bus-refresh'
 

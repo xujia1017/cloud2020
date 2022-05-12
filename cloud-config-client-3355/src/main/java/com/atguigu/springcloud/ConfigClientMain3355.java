@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
- * 成功实现了客户端3355访问SpringCloud Config3344通过GitHub获取的配置信息
+ * 成功实现了客户端3355通过访问SpringCloud Config3344来获取GitHub获取的配置信息
  *
  * @auther zzyy
  * @create 2020-02-21 18:07

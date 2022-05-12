@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * 作为生产者-消息发送模块
+ *
  * @auther zzyy
  * @create 2020-02-22 10:54
  */

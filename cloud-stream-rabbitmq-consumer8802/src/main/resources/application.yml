@@ -21,8 +21,11 @@ spring:
             destination: studyExchange      # 表示要使用的Exchange名称定义
             content-type: application/json  # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
             binder: defaultRabbit           # 设置要绑定的消息服务的具体设置
-            #group: atguiguA
-
+            group: atguiguA
+            # Stream中的消息分组可以解决MQ队列中的消息被重复消费的问题(例如订单服务不允许被重复消费处理).
+            # Stream 中处于同一个group中的多个消费者是竞争关系，就能够保证消息只会被其中一个应用消费一次。
+            # 不同组是可以全面消费的(重复消费)，同一组内会发生竞争关系，只有其中一个可以消费。
+            # 微服务应用置于同一个group中，就能保证消息只会被其中一个应用消费一次。
 
 eureka:
   client: # 客户端进行Eureka注册的配置
