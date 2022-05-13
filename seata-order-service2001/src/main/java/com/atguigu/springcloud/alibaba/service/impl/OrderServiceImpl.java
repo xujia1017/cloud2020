@@ -1,24 +1,27 @@
 package com.atguigu.springcloud.alibaba.service.impl;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Service;
+
 import com.atguigu.springcloud.alibaba.dao.OrderDao;
 import com.atguigu.springcloud.alibaba.domain.Order;
 import com.atguigu.springcloud.alibaba.service.AccountService;
 import com.atguigu.springcloud.alibaba.service.OrderService;
 import com.atguigu.springcloud.alibaba.service.StorageService;
+
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
+ * @GlobalTransactional实现了全局分布式事务
+ *
  * @auther zzyy
  * @create 2020-02-26 15:20
  */
 @Service
 @Slf4j
-public class OrderServiceImpl implements OrderService
-{
+public class OrderServiceImpl implements OrderService {
     @Resource
     private OrderDao orderDao;
     @Resource
@@ -31,9 +34,8 @@ public class OrderServiceImpl implements OrderService
      * 简单说：下订单->扣库存->减余额->改状态
      */
     @Override
-    @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
-    public void create(Order order)
-    {
+    @GlobalTransactional(name = "fsp-create-order", rollbackFor = Exception.class)
+    public void create(Order order) {
         log.info("----->开始新建订单");
         //1 新建订单
         orderDao.create(order);

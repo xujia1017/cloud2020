@@ -1,7 +1,7 @@
 package com.atguigu.springcloud.alibaba.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
-import io.seata.rm.datasource.DataSourceProxy;
+import javax.sql.DataSource;
+
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.transaction.SpringManagedTransactionFactory;
@@ -11,12 +11,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
-import javax.sql.DataSource;
+import com.alibaba.druid.pool.DruidDataSource;
+
+import io.seata.rm.datasource.DataSourceProxy;
 
 /**
+ * 使用Seata对数据源进行代理
+ * 
  * @auther zzyy
  * @create 2020-02-26 16:24
- * 使用Seata对数据源进行代理
  */
 @Configuration
 public class DataSourceProxyConfig {
