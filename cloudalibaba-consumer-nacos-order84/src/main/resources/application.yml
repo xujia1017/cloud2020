@@ -20,7 +20,7 @@ spring:
 service-url:
   nacos-user-service: http://nacos-payment-provider
 
-# 激活Sentinel对Feign的支持
+# 激活Sentinel对Feign(通过@FeignClient实现服务调用，内置Ribbon负载均衡)的支持
 feign:
   sentinel:
     enabled: true

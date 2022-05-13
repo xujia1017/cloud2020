@@ -4,7 +4,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import com.atguigu.springcloud.entities.CommonResult;
 
 /**
- * 自定义限流处理类
+ * 自定义限流处理类，来实现自定义的限流处理逻辑，而不是用Sentinel自带的默认限流处理信息
  *
  * @auther zzyy
  * @create 2020-02-25 15:32

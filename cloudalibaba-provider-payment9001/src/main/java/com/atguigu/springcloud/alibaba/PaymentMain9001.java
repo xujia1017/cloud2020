@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
+ * SpringCloud Alibaba Nacos: 服务注册中心 + 服务配置中心 + Bus总线(实现动态刷新)
+ *
  * @auther zzyy
  * @create 2020-02-23 14:12
  */

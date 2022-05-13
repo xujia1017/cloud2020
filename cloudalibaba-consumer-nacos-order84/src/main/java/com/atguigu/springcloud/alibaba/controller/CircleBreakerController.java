@@ -17,6 +17,10 @@ import com.atguigu.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * @SentinelResource实现限流、降级、熔断
+ *      fallback: 管理运行异常对应的降级
+ *      blockHandler: 管理配置违规对应的降级
+ *
  * @auther zzyy
  * @create 2020-02-25 16:05
  */
@@ -29,12 +33,17 @@ public class CircleBreakerController {
     @Resource
     private RestTemplate restTemplate;
 
+    /**
+     * fallback: 负责运行异常对应的降级
+     * blockHandler: 负责sentinel控制台配置违规对应的降级
+     */
     @RequestMapping("/consumer/fallback/{id}")
     //@SentinelResource(value = "fallback")     //没有配置
     //@SentinelResource(value = "fallback", fallback = "handlerFallback")    //fallback只负责业务异常
     //@SentinelResource(value = "fallback", blockHandler = "blockHandler")   //blockHandler只负责sentinel控制台配置违规
     @SentinelResource(value = "fallback", fallback = "handlerFallback", blockHandler = "blockHandler",
-            exceptionsToIgnore = {IllegalArgumentException.class})
+            exceptionsToIgnore = {IllegalArgumentException.class} //假如报该异常不再有fallback方法兜底,没有降级效果了
+    )
     public CommonResult<Payment> fallback(@PathVariable Long id) {
         CommonResult<Payment> result =
                 restTemplate.getForObject(SERVICE_URL + "/paymentSQL/" + id, CommonResult.class, id);
@@ -65,7 +74,9 @@ public class CircleBreakerController {
                 payment);
     }
 
-    //==================OpenFeign
+    /**
+     * OpenFeign实现服务的调用
+     */
     @Resource
     private PaymentService paymentService;
 

@@ -10,6 +10,8 @@ import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 
 /**
+ * 利用@SentinelResource 进行限流和熔断
+ *
  * @auther zzyy
  * @create 2020-02-25 15:04
  */
@@ -40,8 +42,8 @@ public class RateLimitController {
 
 
     @GetMapping("/rateLimit/customerBlockHandler")
-    @SentinelResource(value = "customerBlockHandler",
-            blockHandlerClass = CustomerBlockHandler.class, blockHandler = "handlerException2")
+    @SentinelResource(value = "customerBlockHandler", blockHandlerClass = CustomerBlockHandler.class,
+            blockHandler = "handlerException2")  //自定义通用的限流处理逻辑，找CustomerBlockHandler类里的handleException2方法进行兜底处理
     public CommonResult customerBlockHandler() {
         return new CommonResult(200, "按客戶自定义", new Payment(2020L, "serial003"));
     }

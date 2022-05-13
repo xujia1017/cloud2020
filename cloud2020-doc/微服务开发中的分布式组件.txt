@@ -170,7 +170,7 @@
 
     SpringCloud Bus:
         1 用于将服务和服务实例与分布式消息系统链接在一起的事件总线。它整合了Java的事件处理机制和消息中间件的功能。
-          在集群中传播状态更改很有用（例如配置更改事件）。Spring Clud Bus目前支持RabbitMQ和Kafka。
+          在集群中传播状态更改很有用（例如配置更改事件）。SpringCloud Bus目前支持RabbitMQ和Kafka。
 
         2 SpringCloud Bus能管理和广播分布式系统中的消息，就像一个分布式执行器，可用于广播状态更改，事件推送等，也可以当做微服务间的通信通道。
           当然作为`消息总线`的SpringCloud Bus可以做很多事而不仅仅是客户端的配置刷新功能。
@@ -198,7 +198,36 @@
 
 
 
-9 分布式事务
+9 分布式请求链路跟踪
+    Java 线上诊断工具 Arthas
+    数据处理工具 EasyExcel
+    数据库连接池 Druid
+    链路追踪Tracing Analysis
+
+    SpringCloud Sleuth提供了一套完整的服务追踪的解决方案，在分布式系统中提供追踪解决方案并且兼容支持了zipkin
+
+10 Nacos: Dynamic Naming and Configuration Service
+    Nacos就是`注册中心`+`配置中心`，等价于 Nacos = Eureka + Config + Bus
+    能干嘛:
+        替代Eureka做服务注册中心
+        替代Config做服务注册中心
+
+
+
+11 熔断与限流SpringCloud Alibaba Sentinel(Hytrix):
+    Sentinel是什么:
+        随着微服务的流行，服务和服务之间的稳定性变得越来越重要。
+        Sentinel以流量为切入点，从流量控制、熔断降级、系统负载保护等多个维度保护服务的稳定性。
+
+    Sentinel 具有以下特征:
+        丰富的应用场景：Sentinel承接了阿里巴巴近10年的双十一大促流量的核心场景，例如秒杀（即突发流量控制在系统容量可以承受的范围）、消息削峰填谷、集群流量控制、实时熔断下游不可用应用等。
+        完备的实时监控：Sentinel同时提供实时的监控功能。您可以在控制台中看到接入应用的单台机器秒级数据，甚至500台以下规模的集群的汇总运行情况。
+        广泛的开源生态：Sentinel提供开箱即用的与其它开源框架/库的整合模块，例如与Spring Cloud、Apache Dubbo、gRPC、Quarkus 的整合。您只需要引入相应的依赖并进行简单的配置即可快速地接入Sentinel。同时Sentinel提供Java/Go/C++ 等多语言的原生实现。
+        完善的SPI扩展机制：Sentinel提供简单易用、完善的 SPI 扩展接口。您可以通过实现扩展接口来快速地定制逻辑。例如定制规则管理、适配动态数据源等。
+
+
+
+12 分布式事务
     Seata
 
 
@@ -209,7 +238,12 @@
 
 
 
-
+服务限流降级 ：默认支持 Servlet 、 Feign 、 RestTemplate 、 Dubbo 和 RocketMQ 限流降级功能的接入，可以在运行时通过控制台实时修改限流降级规则，还支持查看限流降级 Metrics 监控。
+服务注册与发现 ：适配 Spring Cloud 服务注册与发现标准，默认集成了 Ribbon 的支持。
+分布式配置管理 ：支持分布式系统中的外部化配置，配置更改时自动刷新。
+消息驱动能力 ：基于 Spring Cloud Stream 为微服务应用构建消息驱动能力。
+阿里云对象存储 ：阿里云提供的海量、安全、低成本、高可靠的云存储服务。支持在任何应用、任何时间、任何地点存储和访问任意类型的数据。
+分布式任务调度 ：提供秒级、精准、高可靠、高可用的定时（基于 Cron 表达式）任务调度服务。同时提供分布式的任务执行模型，如网格任务。网格任务支持海量子任务均匀分配到所有 Worker （ schedulerx-client ）上执行。
 
 
 

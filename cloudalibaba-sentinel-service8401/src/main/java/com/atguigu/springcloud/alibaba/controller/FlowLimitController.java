@@ -10,6 +10,16 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * 兜底方法:
+ *      分为系统默认和客户自定义，两种
+ *      之前的case，限流出问题后，都是用sentinel系统默认的提示： Blocked by Sentinel (flow limiting)
+ *      我们能不能自定?类似hystrix，某个方法出问题了，就找对应的兜底降级方法？
+ * 结论
+ *      从 @HystrixCommand 到 @SentinelResource
+ *
+ * @SentinelResource主管配置出错，正常的运行出错该走异常走异常
+ *
+ *
  * @auther zzyy
  * @create 2020-02-24 16:26
  */
@@ -51,7 +61,8 @@ public class FlowLimitController {
     }
 
     /**
-     * 如果此处违背了我们在sential中配置的规则，就由`blockHandler`中指定的方法进行兜底处理
+     * 如果此处违反了我们在sential中配置的规则，就进行兜底降级，
+     * 就由 @SentinelResource 注解中的 `blockHandler` 中指定的方法进行兜底处理。
      *
      * @param p1
      * @param p2

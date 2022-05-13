@@ -13,22 +13,23 @@
 
 
     <dependencies>
-        <dependency><!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
+        <!-- 引入自己定义的api通用包，可以使用Payment支付Entity -->
+        <dependency>
             <groupId>com.atguigu.springcloud</groupId>
             <artifactId>cloud-api-commons</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <!--SpringCloud ailibaba nacos -->
+        <!--SpringCloud Ailibaba nacos -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!--SpringCloud ailibaba sentinel-datasource-nacos 把sentinel编写好的流控规则持久化到nacos中-->
+        <!--SpringCloud Ailibaba sentinel-datasource-nacos 把sentinel编写好的流控规则持久化到nacos中-->
         <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
         </dependency>
-        <!--SpringCloud ailibaba sentinel -->
+        <!--SpringCloud Ailibaba sentinel -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>

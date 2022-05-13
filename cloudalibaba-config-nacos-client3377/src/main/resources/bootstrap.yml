@@ -12,9 +12,11 @@ spring:
       config:
         server-addr: localhost:8848   #Nacos作为配置中心地址
         file-extension: yaml          #指定yaml格式的配置，即当前的3377服务就可以去8848上读取后缀格式为yaml文件
-#        group: DEV_GROUP             #哪个分组
-#        namespace: 7d8f0f5a-6a53-4785-9686-dd460158e5d4    #哪个命名空间
+        group: DEV_GROUP              #哪个分组
+        namespace: 7d8f0f5a-6a53-4785-9686-dd460158e5d4    #哪个命名空间
 
+# Nacos中的某个配置集的Data ID。Data ID是组织划分配置的维度之一。Data ID通常用于组织划分系统的配置集。
+# 一个系统或者应用可以包含多个配置集，每个配置集都可以被一个有意义的名称标识。
 
 # ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
 # 去`哪个命名空间`下的`哪个分组`下的`哪个yaml配置文件`下去读配置信息

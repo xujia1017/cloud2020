@@ -3,16 +3,18 @@ server:
 
 spring:
   application:
-    name: cloudalibaba-sentinel-service
+    name: cloudalibaba-sentinel-service   #注册进Eureka服务器的微服务名
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848   #Nacos服务注册中心地址
+        server-addr: localhost:8848       #Nacos服务注册中心地址
     sentinel:
       transport:
-        dashboard: localhost:8080     #配置Sentinel dashboard地址
+        dashboard: localhost:8080         #配置Sentinel dashboard地址
         port: 8719    #默认8719端口，假如被占用会自动从8719开始依次+1扫描，直至找到未被占用的端口
-      datasource:     #把sentinel编写好的流控规则持久化到nacos中
+      #Nacos数据源配置: 把sentinel编写好的流控规则持久化到nacos中
+      #重启服务后，sentinel规则不会消失，会保存在nacos中，等服务重新启动后，配置还会再次生效
+      datasource:
         ds1:
           nacos:
             server-addr: localhost:8848
@@ -28,8 +30,9 @@ management:
       exposure:
         include: '*'
 
+#激活Sentinel对Feign的支持
 feign:
   sentinel:
-    enabled: true   # 激活Sentinel对Feign的支持
+    enabled: true
 
 
